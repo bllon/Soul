@@ -1,0 +1,12 @@
+{
+	"name":"soul PHP",
+	"description":"PHP Framework",
+	"type":"Framework",
+	"keywords":[
+		"PHP","PHP Framework"
+	],
+	"require":{
+		"php":">=5.3.0",
+		"smarty/smarty":"~3.1"
+	}	
+}

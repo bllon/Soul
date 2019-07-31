@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+	</head>
+	<body>
+		{123|test}
+		<br>
+		{dat ab='Y-m-d H:i:s'}
+		
+		{translate lang="br"}Hello, world!{/translate}
+		<h1>{$time|date_format:'Y-m-d H:i:s'}</h1>
+		
+		{if $bold}<b>{/if}
+			
+        Title: {$title|capitalize}
+        
+        
+        <b>{$Name|upper}</b>
+        
+        {section name=outer loop=$FirstName}
+        <br/>
+        	
+	        {if $smarty.section.outer.index is odd by 2}
+	            {$smarty.section.outer.rownum} . {$FirstName[outer]} {$LastName[outer]}
+	        {else}
+	            {$smarty.section.outer.rownum} * {$FirstName[outer]} {$LastName[outer]}
+	        {/if}
+	    {sectionelse}
+	        none
+    	{/section}
+		
+		<br/>
+		{section name=sec1 loop=$contacts}
+	        phone: {$contacts[sec1].phone}
+	        <br>
+	
+	            fax: {$contacts[sec1].fax}
+	        <br>
+	
+	            cell: {$contacts[sec1].cell}
+	        <br>
+	    {/section}
+	    
+	    <br />
+	    {$SCRIPT_NAME}
+	    
+	    <br />
+	    {html_select_date start_year=1998 end_year=2010}
+	    <br />
+	    {html_select_time use_24_hours=false}
+	    <br />
+	    <br />
+	    <select name=states>
+	        {html_options values=$option_values selected=$option_selected output=$option_output}
+	    </select>
+	</body>
+	
+</html>
+
